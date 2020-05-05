@@ -1,0 +1,2 @@
+- name: Test orga
+  debug: msg="Je suis un formateur O'clock ! Ma tâche vient d'etre inclue !"

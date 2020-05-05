@@ -1,0 +1,7 @@
+      - name: Ce bloc de commande va inclure tout les rôles dont on a besoin pour customiser une VM Teacher pour l'organisation Konexio
+        block:
+        - name: 
+        # Ici par contre, c'est un rôle qui pourrait très bien servir à une autre organisation. 
+        # On le met donc dans le dossier orga_customize/roles/common
+          include_role:
+            name: "common/vsc"

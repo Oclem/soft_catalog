@@ -1,0 +1,17 @@
+<form  method='POST'>
+  <h2>Students List</h2>
+  {% for students_elements in students_list %}
+  <label for="{{ students_elements }}">{{ students_elements }}</label>
+  <input type=checkbox name="check" value="{{ students_elements }}" /><br />
+  {% endfor %}
+  <label for="clement-cloud">clement-cloud</label>
+  <input type=checkbox name="check" value="clement-cloud" /><br />
+  <h2>Soft List</h2>
+  <label for="apache2">apache2</label>
+  <input type=checkbox name="check" value="apache2" /><br />
+  <label for="php7">php7</label>
+  <input type=checkbox name="check" value="php7" /><br />
+  <label for="mariadb-server">mariadb-server</label>
+  <input type=checkbox name="check" value="mariadb-server" /><br />
+  <input type='submit' value='Install'/>
+</form>

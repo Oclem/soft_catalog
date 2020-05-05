@@ -1,0 +1,16 @@
+
+        - name: Install Soft
+          apt:
+            name: apache2
+            state: present
+        
+        - name: Install Soft
+          apt:
+            name: php7
+            state: present
+        
+        - name: Install Soft
+          apt:
+            name: mariadb-server
+            state: present
+        

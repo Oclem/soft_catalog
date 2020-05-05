@@ -1,0 +1,23 @@
+- name: code-editor || On installe la clé de Microsoft (berk)
+  apt_key:
+    url: 'https://packages.microsoft.com/keys/microsoft.asc'
+    state: present
+ # environment:     
+ #  http_proxy: http://proxy-students.lan:3128  
+  # https_proxy: https://proxy-students.lan:3128
+- name: code-editor || Puis on ajoute leur dépôt
+  apt_repository:
+    repo: deb [trusted=yes] [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    filename: vscode
+    state: present
+    update_cache: yes
+#- name: update cache et puis c'est tout !
+ # apt:
+   #update_cache: yes
+  #environment:     
+   #http_proxy: "http://proxy-students.lan:3128"   
+   #https_proxy: "https://proxy-students.lan:3128"
+- name: code-editor || On installe Visual Studio Code
+  apt:
+    name: code
+    state: present

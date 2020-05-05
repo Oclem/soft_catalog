@@ -1,0 +1,2 @@
+- name: Le playbook correspondand à l'orga n'existe pas encore
+  debug: msg="Ici, il faudra mettre ce qu'on fait si aucun dossier du nom de l'orga n'existe"

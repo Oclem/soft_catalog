@@ -1,0 +1,2 @@
+- name: Test orga
+  debug: msg="Je suis un élève O'clock ! Ma tâche vient d'etre inclue !"

@@ -1,0 +1,28 @@
+- name : include customisation for orga
+  hosts:
+    - teacher_vm
+  tasks:
+    - name: get orga_name and use the correct playbook if it exists
+      block:
+        - name : install aws-cli
+          apt:
+            name: awscli
+            state: present
+        - name: copy get-aws-tag-value.sh
+          copy:
+            src : get-aws-tag-value.sh
+            dest: /root/get-aws-tag-value.sh
+            mode: 0700
+        - name:
+          shell: 'bash /root/get-aws-tag-value.sh orga'
+          register: orga_name
+        - name : include rolelist 
+          include_role: 
+            name: "{{orga_name.stdout}}/teacher/"
+          when: orga_name.stdout != "none"
+      rescue:
+        - debug:
+           msg: "Il semblerait qu'aucune organisation du nom de {{orga_name.stdout}} n'aie été configurée"
+        - name: On lance donc le role "notfound" qui prendra les mesures appropriées.
+          include_role: 
+            name: "notfound/teacher"

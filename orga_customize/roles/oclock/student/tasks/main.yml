@@ -1,0 +1,12 @@
+      - name: Ce bloc de commande va inclure tout les rôles dont on a besoin pour customiser une VM Teacher pour l'organisation O'clock
+        block:
+        - name: Hello world
+        # Ici, un rôle vraiment spécifique à l'organisation. 
+        # Il se trouve donc dans orga_customize/roles/oclock/student
+          include_role: 
+            name: "{{orga_name.stdout}}/student/helloworld"
+        - name: 
+        # Ici par contre, c'est un rôle qui pourrait très bien servir à une autre organisation. 
+        # On le met donc dans le dossier orga_customize/roles/common
+          include_role:
+            name: "common/apache2"

@@ -1,0 +1,2 @@
+- name: Le playbook correspondand à l'orga n'existe pas encore
+  debug: msg="On s'assure qu'il n'y a pas d'erreur !"
